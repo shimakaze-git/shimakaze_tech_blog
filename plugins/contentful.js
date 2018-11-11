@@ -1,4 +1,5 @@
-const contentful = require('contentful')
+// const contentful = require('contentful')
+const contentful = require("contentful/dist/contentful.browser.min.js")
 const contentful_config = require('../.contentful.json')
 
 // use default environment config for convenience

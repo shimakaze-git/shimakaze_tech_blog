@@ -1,4 +1,6 @@
-const contentful = require('contentful')
+// const contentful = require('contentful')
+const contentful = require("contentful/dist/contentful.browser.min.js")
+
 const config = require('./.contentful.json')
 const client = contentful.createClient({
   
