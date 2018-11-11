@@ -19,7 +19,11 @@
                     
                     <div class="card-content">
                         <div class="content">
-                            {{ post.fields.description }}
+
+                            <div class="notification is-primary">
+                                {{ post.fields.description }}
+                            </div>
+
                             <br>
                             <small>{{ ( new Date(post.fields.publishDate)).toDateString() }}</small>
                         </div>
@@ -35,6 +39,7 @@
 
             </div>
         </div>
+        
     </div>
 </section>
 </template>

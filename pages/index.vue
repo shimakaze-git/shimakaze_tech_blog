@@ -13,7 +13,20 @@
         </div>
       </div>
     </section>
+
     <posts :posts="posts"></posts>
+
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <h5>Tags</h5>
+        <div class="container">
+          <div class="content tags">
+            <span class="tag" v-for="tag in tags" :key="tag">{{ tag }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 
@@ -35,6 +48,7 @@ export default {
   data () {
     return {
       posts: [],
+      tags: [],
       title: config.title,
       subtitle: config.subtitle
     }
@@ -45,11 +59,26 @@ export default {
       order: '-fields.publishDate',
       'limit': 8
     }).then(entries => {
-      // console.log(entries);
+
+      /*
+        tags
+      */
+      var array_tags = []
+      entries.items.forEach(function( item ) {
+        var tags = item.fields.tags
+
+        if(tags){
+          for(var i=0; i < tags.length; i++){
+            array_tags.push(tags[i])
+          }
+        }
+      });
+
       return {
-        posts: entries.items
+        posts: entries.items,
+        tags: Array.from(new Set(array_tags))
       }
     }).catch(console.error)
-  }
+  },
 }
 </script>

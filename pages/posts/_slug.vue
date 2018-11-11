@@ -19,6 +19,10 @@
                 {{ currentPost.fields.body }}
             </vue-markdown>
 
+            <div class="content tags">
+                <span class="tag" v-for="tag in tags" :key="tag">{{ tag }}</span>
+            </div>
+
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
                 <nuxt-link v-if="prevPost" class="pagination-previous" :to="prevPost.fields.slug">
                     &laquo; {{ prevPost.fields.title }}
@@ -27,6 +31,7 @@
                     {{ nextPost.fields.title }} &raquo;
                 </nuxt-link>
             </nav>
+            
         </article>
 
     </section>
@@ -54,7 +59,8 @@ export default {
     data () {
         return {
             allPosts: [],
-            currentPost: []
+            currentPost: [],
+            tags: []
         }
     },
     components: {
@@ -69,9 +75,14 @@ export default {
             const current = posts.filter(function (item) {
                 return item.fields.slug === params.slug
             })
+
+            const tags = current[0].fields.tags
+            // {{ currentPost.fields.tags }}
+
             return {
                 allPosts: posts,
-                currentPost: current[0]
+                currentPost: current[0],
+                tags: tags
             }
         }).catch(console.error)
     },

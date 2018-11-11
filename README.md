@@ -2,6 +2,8 @@
 
 > shimakaze tech blog
 
+URL : https://stupefied-mclean-8fd411.netlify.com/
+
 ## Build Setup
 
 ``` bash
@@ -10,6 +12,10 @@ $ cd shimakaze_tech_blog
 
 # install dependencies
 $ npm install # Or yarn install
+
+#setup contentful config
+$ cp setup.sample.sh setup.sh
+$ source setup.sh
 
 # serve with hot reload at localhost:3000
 $ npm run dev

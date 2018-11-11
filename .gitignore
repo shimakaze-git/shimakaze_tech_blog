@@ -12,3 +12,5 @@ dist
 
 #
 .contentful.json
+
+setup.sh
