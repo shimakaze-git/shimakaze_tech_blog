@@ -4,10 +4,10 @@ const contentful_config = require('../.contentful.json')
 // use default environment config for convenience
 // these will be set via `env` property in nuxt.config.js
 const config = {
-    // space: process.env.CTF_SPACE_ID,
-    space: contentful_config.CTF_SPACE_ID,
-    // accessToken: process.env.CTF_CDA_ACCESS_TOKEN
-    accessToken: contentful_config.CTF_CDA_ACCESS_TOKEN
+    space: process.env.CTF_SPACE_ID,
+    // space: contentful_config.CTF_SPACE_ID,
+    accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+    // accessToken: contentful_config.CTF_CDA_ACCESS_TOKEN
 }
 
 // export `createClient` to use it in page components
