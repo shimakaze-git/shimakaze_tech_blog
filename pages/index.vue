@@ -21,7 +21,6 @@
 import Posts from '~/components/Posts.vue'
 import {createClient} from '~/plugins/contentful.js'
 
-const contentful_config = require('../.contentful.json')
 const config = require('../config.json')
 
 const client = createClient()
