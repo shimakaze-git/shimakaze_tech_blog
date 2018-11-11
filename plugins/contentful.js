@@ -1,5 +1,6 @@
-// const contentful = require('contentful')
-const contentful = require("contentful/dist/contentful.node.min.js")
+const contentful = require('contentful')
+// const contentful = require("contentful/dist/contentful.node.min.js")
+
 const contentful_config = require('../.contentful.json')
 
 // use default environment config for convenience
