@@ -83,7 +83,8 @@ module.exports = {
   generate: {
     routes () {
       return client.getEntries({
-        'content_type': config.CTF_BLOG_POST_TYPE_ID
+        // 'content_type': config.CTF_BLOG_POST_TYPE_ID
+        'content_type': process.env.CTF_BLOG_POST_TYPE_ID
       }).then((entries) => {
         return [...entries.items.map(entry => `posts/${entry.fields.slug}`)]
       })
