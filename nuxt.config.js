@@ -4,10 +4,10 @@ const contentful = require('contentful')
 const config = require('./.contentful.json')
 const client = contentful.createClient({
   
-  space: config.CTF_SPACE_ID,
-  // space: process.env.CTF_SPACE_ID,
-  accessToken: config.CTF_CDA_ACCESS_TOKEN
-  // accessToken: process.env.CTF_SPACE_ID
+  // space: config.CTF_SPACE_ID,
+  space: process.env.CTF_SPACE_ID,
+  // accessToken: config.CTF_CDA_ACCESS_TOKEN
+  accessToken: process.env.CTF_CDA_ACCESS_TOKEN
 })
 
 
