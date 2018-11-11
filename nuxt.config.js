@@ -1,12 +1,7 @@
 const contentful = require('contentful')
-// const contentful = require("contentful/dist/contentful.node.min.js")
 
-const config = require('./.contentful.json')
 const client = contentful.createClient({
-  
-  // space: config.CTF_SPACE_ID,
   space: process.env.CTF_SPACE_ID,
-  // accessToken: config.CTF_CDA_ACCESS_TOKEN
   accessToken: process.env.CTF_CDA_ACCESS_TOKEN
 })
 
@@ -109,10 +104,6 @@ module.exports = {
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
     CTF_PERSON_ID: process.env.CTF_PERSON_ID,
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID
-    // CTF_SPACE_ID: config.CTF_SPACE_ID,
-    // CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    // CTF_PERSON_ID: config.CTF_PERSON_ID,
-    // CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID,
   }
 
 

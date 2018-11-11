@@ -11,9 +11,6 @@ $ cd shimakaze_tech_blog
 # install dependencies
 $ npm install # Or yarn install
 
-# copy config file
-$ cp .contentful.sample.json .contentful.json
-
 # serve with hot reload at localhost:3000
 $ npm run dev
 
