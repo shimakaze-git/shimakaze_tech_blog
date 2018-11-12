@@ -27,6 +27,12 @@
                             <br>
                             <small>{{ ( new Date(post.fields.publishDate)).toDateString() }}</small>
                         </div>
+                        <div class="content">
+                            <div class="content tags">
+                                <span class="tag" v-for="tag in post.fields.tags" :key="tag">{{ tag }}</span>
+                            </div>
+                            <!--test-->
+                        </div>
                     </div>
                     
                     <footer class="card-footer">
