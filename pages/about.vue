@@ -66,7 +66,6 @@ export default {
     return client.getEntries({
       'content_type': env.CTF_PERSON_TYPE_ID
     }).then(entries => {
-      console.log(entries.items[0].fields)
       var shortBio = entries.items[0].fields.shortBio
       
       return {
@@ -75,9 +74,9 @@ export default {
       }
     }).catch(console.error)
   },
-  mounted: function () {
-    console.log(this.person)
-  }
+  // mounted: function () {
+  //   console.log(this.person)
+  // }
 }
 </script>
 
