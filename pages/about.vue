@@ -31,10 +31,12 @@
 
       <div class="media">
         <div class="media-content">
-          <p v-for="str in shortBio" :key="str">
-            {{str}}
-          </p>
-          本ブログは<a href="https://github.com/hisako135/nuxt_blog">こちら</a>を参考にしました。
+
+          <vue-markdown :source="shortBio" class="content">
+          </vue-markdown>
+
+          <!--{{ shortBio }}-->
+          <!--本ブログは<a href="https://github.com/hisako135/nuxt_blog">こちら</a>を参考にしました。-->
         </div>
       </div>
 
@@ -47,6 +49,7 @@
 import VueMarkdown from 'vue-markdown'
 import {createClient} from '~/plugins/contentful.js'
 const client = createClient()
+var markdown = require( "markdown" ).markdown;
 
 
 export default {
@@ -56,7 +59,8 @@ export default {
   data () {
     return {
       person: [],
-      shortBio: []
+      shortBio: [],
+      test: "# hogehoge"
     }
   },
   components: {
@@ -68,14 +72,20 @@ export default {
     }).then(entries => {
       var shortBio = entries.items[0].fields.shortBio
       
+      // var markdown = require( "markdown" ).markdown;
+      
+      
       return {
         person: entries.items[0].fields,
-        shortBio: shortBio.split(/\n/)
+        // shortBio: shortBio.split(/\n/),
+        shortBio: shortBio,
+        // shortBio: markdown.toHTML(shortBio),
       }
     }).catch(console.error)
   },
   // mounted: function () {
   //   console.log(this.person)
+  //   console.log(VueMarkdown)
   // }
 }
 </script>
